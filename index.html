@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS - Placement Intelligence Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo">N</div>
+                <span class="brand-name">NEXUS</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#insights" class="nav-link">Insights</a>
+                <a href="#companies" class="nav-link">Companies</a>
+                <a href="#communities" class="nav-link">Communities</a>
+                <a href="#calendar" class="nav-link">Calendar</a>
+            </div>
+            <div class="nav-actions">
+                <input type="text" class="search-bar" placeholder="Search...">
+                <button class="icon-btn"><span>🔔</span></button>
+                <button class="icon-btn"><span>❓</span></button>
+                <div class="profile-avatar">S</div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home" class="mobile-link">Home</a>
+        <a href="#insights" class="mobile-link">Insights</a>
+        <a href="#companies" class="mobile-link">Companies</a>
+        <a href="#communities" class="mobile-link">Communities</a>
+        <a href="#calendar" class="mobile-link">Calendar</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Landing Section -->
+        <section id="home" class="section landing-section active">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Placement Intelligence,<br>Not Just Placement Tracking</h1>
+                    <p class="hero-subtitle">Transform your placement journey with data-driven insights, community support, and smart tracking</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" onclick="navigateToSection('insights')">Explore Insights</button>
+                        <button class="btn btn-secondary" onclick="navigateToSection('communities')">Join Community</button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="stats-card floating">
+                        <div class="stat-icon">📊</div>
+                        <h3>250+</h3>
+                        <p>Companies Visited</p>
+                    </div>
+                    <div class="stats-card floating delay-1">
+                        <div class="stat-icon">🎯</div>
+                        <h3>85%</h3>
+                        <p>Placement Rate</p>
+                    </div>
+                    <div class="stats-card floating delay-2">
+                        <div class="stat-icon">💰</div>
+                        <h3>12.5 LPA</h3>
+                        <p>Average CTC</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Preview -->
+            <div class="dashboard-preview">
+                <div class="left-panel">
+                    <!-- Student Profile Card -->
+                    <div class="card profile-card">
+                        <div class="card-header">
+                            <h2>Student Profile</h2>
+                            <button class="btn-icon">⚙️</button>
+                        </div>
+                        <div class="profile-info">
+                            <div class="profile-avatar-large">S</div>
+                            <h3>Sahil Kumar</h3>
+                            <p class="profile-meta">Computer Science • 2025 • CGPA: 8.5</p>
+                        </div>
+                        <div class="skills-section">
+                            <h4>Skills</h4>
+                            <div class="skills-tags">
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">DSA</span>
+                            </div>
+                        </div>
+                        <div class="readiness-section">
+                            <div class="readiness-header">
+                                <h4>Placement Readiness</h4>
+                                <span class="readiness-score">78%</span>
+                            </div>
+                            <div class="progress-ring">
+                                <svg width="120" height="120">
+                                    <circle cx="60" cy="60" r="54" class="progress-ring-circle-bg"></circle>
+                                    <circle cx="60" cy="60" r="54" class="progress-ring-circle" style="stroke-dashoffset: 74;"></circle>
+                                </svg>
+                                <div class="progress-ring-text">78%</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-full" onclick="showSkillGap()">Analyze Skill Gaps</button>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="card quick-actions-card">
+                        <h3>Quick Actions</h3>
+                        <div class="action-buttons">
+                            <button class="action-btn" onclick="navigateToSection('companies')">
+                                <span class="action-icon">🏢</span>
+                                <span>Browse Companies</span>
+                            </button>
+                            <button class="action-btn" onclick="navigateToSection('calendar')">
+                                <span class="action-icon">📅</span>
+                                <span>View Calendar</span>
+                            </button>
+                            <button class="action-btn" onclick="showAIMentor()">
+                                <span class="action-icon">🤖</span>
+                                <span>AI Mentor</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right-panel">
+                    <!-- Placement Stats -->
+                    <div class="card stats-overview-card">
+                        <div class="card-header">
+                            <h2>Placement Overview</h2>
+                            <select class="filter-select">
+                                <option>This Week</option>
+                                <option>This Month</option>
+                                <option>This Year</option>
+                            </select>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-label">Applications Sent</div>
+                                <div class="stat-value">24</div>
+                                <div class="stat-trend positive">+12%</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Interviews</div>
+                                <div class="stat-value">8</div>
+                                <div class="stat-trend positive">+25%</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Offers</div>
+                                <div class="stat-value">3</div>
+                                <div class="stat-trend positive">+50%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Projects Section -->
+                    <div class="card recent-projects-card">
+                        <div class="card-header">
+                            <h2>Upcoming Opportunities</h2>
+                            <a href="#companies" class="see-all-link">See all</a>
+                        </div>
+                        <div class="project-list">
+                            <div class="project-item">
+                                <div class="project-icon" style="background: #FF6B6B;">G</div>
+                                <div class="project-info">
+                                    <h4>Google</h4>
+                                    <p class="project-meta">SDE Intern • ₹1.2L/month</p>
+                                    <div class="project-tags">
+                                    <span class="tag tag-blue">Remote</span>
+                                    <span class="tag tag-green">High Match</span>
+                                    </div>
+                                    <p class="project-desc">Coding round on Feb 10 • Eligibility: CGPA > 8.0</p>
+                                </div>
+                                <button class="expand-btn">›</button>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-icon" style="background: #4F46E5;">M</div>
+                                <div class="project-info">
+                                    <h4>Microsoft</h4>
+                                    <p class="project-meta">SDE Role • ₹42 LPA</p>
+                                    <div class="project-tags">
+                                        <span class="tag tag-blue">Hybrid</span>
+                                        <span class="tag tag-orange">Medium</span>
+                                    </div>
+                                    <p class="project-desc">Resume screening • All branches eligible</p>
+                                </div>
+                                <button class="expand-btn">›</button>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-icon" style="background: #22C55E;">A</div>
+                                <div class="project-info">
+                                    <h4>Amazon</h4>
+                                    <p class="project-meta">SDE-1 • ₹28 LPA</p>
+                                    <div class="project-tags">
+                                        <span class="tag tag-gray">On-site</span>
+                                        <span class="tag tag-green">Registered</span>
+                                    </div>
+                                    <p class="project-desc">Online test on Feb 15 • DSA focused</p>
+                                </div>
+                                <button class="expand-btn">›</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mentor Connection -->
+                    <div class="card mentor-card">
+                        <h3>Connect with Mentors</h3>
+                        <div class="mentor-list">
+                            <div class="mentor-item">
+                                <div class="mentor-avatar">R</div>
+                                <div class="mentor-info">
+                                    <h4>Rahul Sharma <span class="badge badge-senior">Senior</span></h4>
+                                    <p>Software Engineer at Google</p>
+                                </div>
+                                <button class="btn-add">+</button>
+                            </div>
+                            <div class="mentor-item">
+                                <div class="mentor-avatar" style="background: #22C55E;">P</div>
+                                <div class="mentor-info">
+                                    <h4>Priya Singh <span class="badge badge-middle">Alumnus</span></h4>
+                                    <p>Product Manager at Microsoft</p>
+                                </div>
+                                <button class="btn-add">+</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline btn-full">See all mentors</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Insights Section -->
+        <section id="insights" class="section insights-section">
+            <div class="section-header">
+                <h1>Placement Insights</h1>
+                <p>Data-driven analytics to guide your placement strategy</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters-bar">
+                <select class="filter-select" id="branchFilter">
+                    <option value="all">All Branches</option>
+                    <option value="cse">Computer Science</option>
+                    <option value="ece">Electronics</option>
+                    <option value="mech">Mechanical</option>
+                </select>
+                <select class="filter-select" id="yearFilter">
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                </select>
+                <select class="filter-select" id="companyTypeFilter">
+                    <option value="all">All Types</option>
+                    <option value="tech">Tech Giants</option>
+                    <option value="startup">Startups</option>
+                    <option value="core">Core Engineering</option>
+                </select>
+            </div>
+
+            <!-- Insights Grid -->
+            <div class="insights-grid">
+                <!-- Company Visit Trend -->
+                <div class="card insight-card chart-card">
+                    <div class="card-header">
+                        <h3>Company Visit Trends</h3>
+                        <span class="card-subtitle">Last 6 months</span>
+                    </div>
+                    <div class="chart-container">
+                        <div class="bar-chart" id="companyTrendChart"></div>
+                    </div>
+                </div>
+
+                <!-- Average CTC by Branch -->
+                <div class="card insight-card">
+                    <div class="card-header">
+                        <h3>Average CTC by Branch</h3>
+                        <span class="card-subtitle">Current Year</span>
+                    </div>
+                    <div class="ctc-grid">
+                        <div class="ctc-card">
+                            <div class="ctc-icon">💻</div>
+                            <h4>Computer Science</h4>
+                            <div class="ctc-value">₹14.5 LPA</div>
+                            <div class="ctc-trend positive">+18%</div>
+                        </div>
+                        <div class="ctc-card">
+                            <div class="ctc-icon">⚡</div>
+                            <h4>Electronics</h4>
+                            <div class="ctc-value">₹10.2 LPA</div>
+                            <div class="ctc-trend positive">+12%</div>
+                        </div>
+                        <div class="ctc-card">
+                            <div class="ctc-icon">⚙️</div>
+                            <h4>Mechanical</h4>
+                            <div class="ctc-value">₹8.5 LPA</div>
+                            <div class="ctc-trend positive">+8%</div>
+                        </div>
+                        <div class="ctc-card">
+                            <div class="ctc-icon">🏗️</div>
+                            <h4>Civil</h4>
+                            <div class="ctc-value">₹7.8 LPA</div>
+                            <div class="ctc-trend positive">+5%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Round Elimination Analysis -->
+                <div class="card insight-card">
+                    <div class="card-header">
+                        <h3>Round Elimination Analysis</h3>
+                        <span class="card-subtitle">Average pass rates</span>
+                    </div>
+                    <div class="elimination-chart">
+                        <div class="elimination-item">
+                            <div class="elim-label">Resume Screening</div>
+                            <div class="elim-bar-container">
+                                <div class="elim-bar" style="width: 65%; background: #22C55E;"></div>
+                                <span class="elim-value">65%</span>
+                            </div>
+                        </div>
+                        <div class="elimination-item">
+                            <div class="elim-label">Online Test</div>
+                            <div class="elim-bar-container">
+                                <div class="elim-bar" style="width: 45%; background: #3B82F6;"></div>
+                                <span class="elim-value">45%</span>
+                            </div>
+                        </div>
+                        <div class="elimination-item">
+                            <div class="elim-label">Technical Round 1</div>
+                            <div class="elim-bar-container">
+                                <div class="elim-bar" style="width: 35%; background: #F59E0B;"></div>
+                                <span class="elim-value">35%</span>
+                            </div>
+                        </div>
+                        <div class="elimination-item">
+                            <div class="elim-label">Technical Round 2</div>
+                            <div class="elim-bar-container">
+                                <div class="elim-bar" style="width: 25%; background: #EF4444;"></div>
+                                <span class="elim-value">25%</span>
+                            </div>
+                        </div>
+                        <div class="elimination-item">
+                            <div class="elim-label">HR Round</div>
+                            <div class="elim-bar-container">
+                                <div class="elim-bar" style="width: 80%; background: #8B5CF6;"></div>
+                                <span class="elim-value">80%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Hiring Companies -->
+                <div class="card insight-card">
+                    <div class="card-header">
+                        <h3>Top Hiring Companies</h3>
+                        <span class="card-subtitle">This season</span>
+                    </div>
+                    <div class="top-companies-list">
+                        <div class="top-company-item">
+                            <div class="rank">1</div>
+                            <div class="company-logo" style="background: #4F46E5;">TCS</div>
+                            <div class="company-details">
+                                <h4>TCS</h4>
+                                <p>142 offers</p>
+                            </div>
+                            <div class="company-ctc">₹7.5 LPA</div>
+                        </div>
+                        <div class="top-company-item">
+                            <div class="rank">2</div>
+                            <div class="company-logo" style="background: #22C55E;">W</div>
+                            <div class="company-details">
+                                <h4>Wipro</h4>
+                                <p>98 offers</p>
+                            </div>
+                            <div class="company-ctc">₹8.2 LPA</div>
+                        </div>
+                        <div class="top-company-item">
+                            <div class="rank">3</div>
+                            <div class="company-logo" style="background: #F59E0B;">I</div>
+                            <div class="company-details">
+                                <h4>Infosys</h4>
+                                <p>87 offers</p>
+                            </div>
+                            <div class="company-ctc">₹7.8 LPA</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Companies Section -->
+        <section id="companies" class="section companies-section">
+            <div class="section-header">
+                <h1>Upcoming Companies</h1>
+                <p>Explore opportunities and prepare strategically</p>
+            </div>
+
+            <!-- Company Filters -->
+            <div class="filters-bar">
+                <div class="filter-chips">
+                    <button class="chip active" data-filter="all">All</button>
+                    <button class="chip" data-filter="tech">Tech Giants</button>
+                    <button class="chip" data-filter="startup">Startups</button>
+                    <button class="chip" data-filter="core">Core</button>
+                    <button class="chip" data-filter="consulting">Consulting</button>
+                </div>
+                <input type="text" class="search-input" placeholder="Search companies...">
+            </div>
+
+            <!-- Companies Grid -->
+            <div class="companies-grid" id="companiesGrid">
+                <!-- Company cards will be populated by JS -->
+            </div>
+        </section>
+
+        <!-- Communities Section -->
+        <section id="communities" class="section communities-section">
+            <div class="section-header">
+                <h1>Placement Communities</h1>
+                <p>Connect, learn, and grow with peers sharing similar goals</p>
+            </div>
+
+            <!-- Communities Grid -->
+            <div class="communities-grid">
+                <div class="community-card" onclick="openCommunity('faang')">
+                    <div class="community-header">
+                        <div class="community-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">🚀</div>
+                        <span class="community-members">1,247 members</span>
+                    </div>
+                    <h3>FAANG Aspirants</h3>
+                    <p>Crack interviews at top tech giants with peer support and resources</p>
+                    <div class="community-stats">
+                        <span>📝 342 Posts</span>
+                        <span>💬 1.2K Discussions</span>
+                    </div>
+                    <button class="btn btn-primary btn-full">Join Community</button>
+                </div>
+
+                <div class="community-card" onclick="openCommunity('core')">
+                    <div class="community-header">
+                        <div class="community-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">⚙️</div>
+                        <span class="community-members">856 members</span>
+                    </div>
+                    <h3>Core Engineering</h3>
+                    <p>Mechanical, Civil, and Electrical engineering placement discussions</p>
+                    <div class="community-stats">
+                        <span>📝 189 Posts</span>
+                        <span>💬 654 Discussions</span>
+                    </div>
+                    <button class="btn btn-primary btn-full">Join Community</button>
+                </div>
+
+                <div class="community-card" onclick="openCommunity('startup')">
+                    <div class="community-header">
+                        <div class="community-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">💡</div>
+                        <span class="community-members">623 members</span>
+                    </div>
+                    <h3>Startup Enthusiasts</h3>
+                    <p>Explore opportunities in fast-growing startups and build innovative careers</p>
+                    <div class="community-stats">
+                        <span>📝 245 Posts</span>
+                        <span>💬 892 Discussions</span>
+                    </div>
+                    <button class="btn btn-primary btn-full">Join Community</button>
+                </div>
+
+                <div class="community-card" onclick="openCommunity('higher')">
+                    <div class="community-header">
+                        <div class="community-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">🎓</div>
+                        <span class="community-members">412 members</span>
+                    </div>
+                    <h3>Higher Studies</h3>
+                    <p>MS, MBA, and PhD aspirants - GRE, GMAT, and university applications</p>
+                    <div class="community-stats">
+                        <span>📝 156 Posts</span>
+                        <span>💬 487 Discussions</span>
+                    </div>
+                    <button class="btn btn-primary btn-full">Join Community</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendar Section -->
+        <section id="calendar" class="section calendar-section">
+            <div class="section-header">
+                <h1>Placement Calendar</h1>
+                <p>Track company visits and interview schedules</p>
+            </div>
+
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button class="calendar-nav-btn" onclick="changeMonth(-1)">‹</button>
+                    <h2 id="calendarMonth">February 2026</h2>
+                    <button class="calendar-nav-btn" onclick="changeMonth(1)">›</button>
+                </div>
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- Calendar will be populated by JS -->
+                </div>
+            </div>
+
+            <!-- Upcoming Events -->
+            <div class="card upcoming-events-card">
+                <h3>Upcoming Events This Week</h3>
+                <div class="events-list" id="eventsList">
+                    <!-- Events will be populated by JS -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modals -->
+    <!-- Company Detail Modal -->
+    <div class="modal" id="companyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalCompanyName">Company Details</h2>
+                <button class="modal-close" onclick="closeModal('companyModal')">×</button>
+            </div>
+            <div class="modal-body" id="modalCompanyBody">
+                <!-- Content populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Community Detail Modal -->
+    <div class="modal" id="communityModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2 id="modalCommunityName">Community</h2>
+                <button class="modal-close" onclick="closeModal('communityModal')">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="community-posts" id="communityPosts">
+                    <!-- Posts populated by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skill Gap Modal -->
+    <div class="modal" id="skillGapModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Skill Gap Analysis</h2>
+                <button class="modal-close" onclick="closeModal('skillGapModal')">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="skill-gap-content">
+                    <div class="gap-section">
+                        <h3>Target Role: Software Development Engineer</h3>
+                        <div class="skills-comparison">
+                            <div class="skills-column">
+                                <h4>✅ Your Skills</h4>
+                                <div class="skill-list">
+                                    <div class="skill-item complete">React</div>
+                                    <div class="skill-item complete">Node.js</div>
+                                    <div class="skill-item complete">Python</div>
+                                    <div class="skill-item complete">SQL</div>
+                                    <div class="skill-item complete">DSA</div>
+                                </div>
+                            </div>
+                            <div class="skills-column">
+                                <h4>⚠️ Missing Skills</h4>
+                                <div class="skill-list">
+                                    <div class="skill-item missing">System Design</div>
+                                    <div class="skill-item missing">Docker</div>
+                                    <div class="skill-item missing">Kubernetes</div>
+                                    <div class="skill-item missing">AWS</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recommendations">
+                        <h4>📚 Recommended Resources</h4>
+                        <ul>
+                            <li>System Design Primer (GitHub)</li>
+                            <li>Docker for Beginners (Udemy)</li>
+                            <li>AWS Solutions Architect (Coursera)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Mentor Modal -->
+    <div class="modal" id="aiMentorModal">
+        <div class="modal-content modal-chat">
+            <div class="modal-header">
+                <h2>🤖 AI Placement Mentor</h2>
+                <button class="modal-close" onclick="closeModal('aiMentorModal')">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="chat-message bot">
+                            <div class="message-avatar">🤖</div>
+                            <div class="message-content">
+                                <p>Hi! I'm your AI Placement Mentor. I can help you with:</p>
+                                <ul>
+                                    <li>Interview preparation tips</li>
+                                    <li>Resume suggestions</li>
+                                    <li>Company-specific guidance</li>
+                                    <li>Skill development roadmaps</li>
+                                </ul>
+                                <p>What would you like to know?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything...">
+                        <button class="chat-send-btn" onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Detail Modal -->
+    <div class="modal" id="eventModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalEventTitle">Event Details</h2>
+                <button class="modal-close" onclick="closeModal('eventModal')">×</button>
+            </div>
+            <div class="modal-body" id="modalEventBody">
+                <!-- Content populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
