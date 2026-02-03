@@ -1,4 +1,4 @@
-# Nexus# 
+# Nexus 
 
 **Nexus** is a smart placement intelligence platform designed to bridge the gap between students, skills, and opportunities.  
 It helps track student progress, predict career opportunities, and empower campuses to make data-driven placement decisions.
